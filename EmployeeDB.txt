@@ -1,9 +1,9 @@
-Departments
+Departments - done
 -
 dept_no varchar pk
 dept_name varchar
 -----------------------------------------------------------------
-Employees
+Employees - done
 -
 emp_no int pk
 birth_date date
@@ -12,21 +12,21 @@ last_name varchar
 gender varchar
 hire_date date
 ---------------------------------------------------------------
-Dept_Emp
+Dept_Emp - done
 -
 dept_no varchar pk fk -< Departments.dept_no
 emp_no int pk fk -< Employees.emp_no
 from_date date
 to_date date
 ----------------------------------------------------------------
-Manager
+Manager - done
 -
 dept_no varchar pk fk - Departments.dept_no 
 emp_no int pk fk - Employees.emp_no
 from_date date
 to_date date
 ----------------------------------------------------------------------------------
-Salaries
+Salaries - done
 -
 emp_no int pk fk - Employees.emp_no
 salary int
