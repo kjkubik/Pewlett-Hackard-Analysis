@@ -130,7 +130,8 @@ SELECT 	retirement_info.emp_no,
 		FROM retirement_info
    LEFT JOIN dept_emp
           ON retirement_info.emp_no = dept_emp.emp_no;
-		  
+
+-- same as above but using Alias		  
 SELECT 	ri.emp_no,
     	ri.first_name,
 		ri.last_name,
@@ -147,7 +148,7 @@ SELECT d.dept_name,
 INNER JOIN dept_manager as dm
         ON d.dept_no = dm.dept_no;
 
--- current_emp
+-- current_emp (These are employees ready to retire that haven't left the company.) 33,118...ALL EMPLOYEES = 240124
 SELECT ri.emp_no,
     ri.first_name,
     ri.last_name,

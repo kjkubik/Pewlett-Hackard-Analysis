@@ -123,4 +123,32 @@ where emp.emp_no = title.emp_no
   and de.dept_no = dept.dept_no
 order by dept.dept_name, title.title;
 
--- count the number of titles an employee has had (the number of times they show up in the employee table)
+-- listing the employees in a specific department ordered by title and from date
+
+SELECT distinct on (emp.emp_no)
+       de.dept_no, 
+	     dept.dept_name,
+	     emp.emp_no,
+	     title.title,
+	     emp.first_name,
+	     emp.last_name,
+	     de.from_date,
+	     de.to_date
+  INTO marketing_distinct_listing
+  FROM dept_emp AS de
+LEFT JOIN employees AS emp
+  ON (emp.emp_no = de.emp_no)
+LEFT JOIN departments AS dept	 
+  ON (dept.dept_no = de.dept_no)
+LEFT JOIN titles AS title
+  ON (emp.emp_no = title.emp_no)
+ WHERE de.to_date = '9999-01-01'
+ AND dept.dept_name = 'Marketing' 
+ AND (title.title = 'Senior Staff' OR title.title = 'Staff')
+GROUP BY emp.emp_no, de.dept_no, dept.dept_name,title.title,de.from_date,de.to_date
+ORDER BY emp.emp_no, de.dept_no, title.title;
+
+select * 
+into marketing_listing_ordered
+from marketing_distinct_listing
+order by dept_no, title, from_date;
