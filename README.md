@@ -1,7 +1,9 @@
 # Pewlett-Hackard-Analysis
 Databases and SQL
 
-##  Solving the Silver Tsunami
+##  Solving the Silver Tsunami 
+
+![](Images/RetiringPic.png)
 
 ### Overview:
 It is time for Pewlett-Hackard’s management team to come up with a win-win situation for its’ employees. The opportunity is to find a way for retiring employees to help the next generation carry on successfully.
@@ -52,6 +54,7 @@ If management likes these suggestions, I would create the queries.
 For now, helping management identify employee's title and from_date seems more of a priority. A query has been created so each manager will have a tailored list of employees within their department. This list is order by title and length of time in the position. Here is an example of the query I could build each manager's employee information from.
 
 Marketing’s listing:
+
 ![](Images/MarketingListing.png)
 
 ### Other Queries: 
