@@ -41,13 +41,13 @@ The criteria asked for by management for mentorship was to find all employees bo
 If the two managers are the only managers promoted within the company, it will be highly recommended that at least two PEWLETT-HACKARD employees are groomed for management positions. Employees starting within a company have been known to be valuable assets to many successful companies.
 
 #### Mentorship Program Results - What else can we do?
-ask why only employees whose birthdays were in 1965 were chosen. If mentors are needed, I would also suggest naming the employees who have: 
+Asking why only employees whose birthdays were in 1965 were chosen might be a smart move. If mentors are needed, I would also suggest naming the employees who have: 
 
-- worked in more than one department
-- received the largest number of promotions
-- spent the most time at PEWLETT-HACKARD
+- Worked in more than one department
+- Received the largest number of promotions
+- Spent the most time at PEWLETT-HACKARD
 
-If management likes these suggestions, I would create the queries. 
+If management likes these suggestions, I would create the queries.
 
 For now, helping management identify employee's title and from_date seems more of a priority. A query has been created so each manager will have a tailored list of employees within their department. This list is order by title and length of time in the position. Here is an example of the query I could build each manager's employee information from.
 
@@ -57,15 +57,17 @@ Marketing’s listing:
 ### Other Queries: 
 
 Using the below query, I was able to get the current management staff.
+
 ![](Images/Query_Current_Management.png)
 
-Using the below queries, I was able to get the percentages of retirees:
+Using the below queries, I was able to get the percentages of retirees.
+
 ![](Images/query_for_retireDIVallEmployeesPercent.png)
 
-Here is a query for each department's titles:
+Here is a query for each department's titles.
 ![](Images/DeptTitlesListing.png)
-### Confirmations Needed:
+
+### Table Confirmations:
 
 #### emp_info: 
-
 The dept_manager table does have a manager for each department. It was found that the emp_info table couldn't be used as a cross reference to manager's information. Managers are not necessarily entered into the system as an employee. It seems they may have only been entered into the emp_info table if they had started out in other positions. Managers, however, were entered into the employees’ table and in all department tables. I need to further check with management, though. They may understand more of the history behind the origination and use of these six tables.

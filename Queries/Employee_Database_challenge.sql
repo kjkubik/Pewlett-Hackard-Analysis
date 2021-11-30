@@ -58,7 +58,7 @@ INNER JOIN titles AS title
 ORDER BY emp.emp_no;   
 
 -- how many employees as mentors:
-select count(*) from mentorship_eligibilty;
+SELECT COUNT(*) FROM mentorship_eligibilty;
 
 ------------ Challenge 3 ------------
 
@@ -97,10 +97,10 @@ GROUP BY de.dept_no, dept.dept_name
 ORDER BY de.dept_no;
 
 SELECT dept_no, 
-	     dept_name, 
-	     all_emps,
-	     emps_ready_for_retirement, 
-	     to_char(div(emps_ready_for_retirement * 100, all_emps),'99.99') AS percent_ready_to_retire
+	   dept_name, 
+	   all_emps,
+	   emps_ready_for_retirement, 
+	   to_char(div(emps_ready_for_retirement * 100, all_emps),'99.99') AS percent_ready_to_retire
 INTO by_department_percent
 FROM by_department_counts;
 
@@ -109,31 +109,31 @@ SELECT dept_no,
 	   all_emps,
 	   emps_ready_for_retirement, 
 	   to_char(percent_ready_to_retire),'99.99')  
-into by_department_readable
+INTO by_department_readable
 FROM by_department_percent;
 
 -- give me all titles in the departments
-SELECT distinct dept.dept_name, title.title  
-  FROM employees as emp,
-       titles as title,
-	     departments as dept,
-	     dept_emp as de
-where emp.emp_no = title.emp_no
-  and emp.emp_no = de.emp_no
-  and de.dept_no = dept.dept_no
-order by dept.dept_name, title.title;
+SELECT DISTINCT dept.dept_name, title.title  
+  FROM employees AS emp,
+       titles AS title,
+	     departments AS dept,
+	     dept_emp AS de
+WHERE emp.emp_no = title.emp_no
+  AND emp.emp_no = de.emp_no
+  AND de.dept_no = dept.dept_no
+ORDER BY dept.dept_name, title.title;
 
 -- listing the employees in a specific department ordered by title and from date
 
-SELECT distinct on (emp.emp_no)
+SELECT DISTINCT ON (emp.emp_no)
        de.dept_no, 
-	     dept.dept_name,
-	     emp.emp_no,
-	     title.title,
-	     emp.first_name,
-	     emp.last_name,
-	     de.from_date,
-	     de.to_date
+	   dept.dept_name,
+	   emp.emp_no,
+	   title.title,
+	   emp.first_name,
+	   emp.last_name,
+	   de.from_date,
+	   de.to_date
   INTO marketing_distinct_listing
   FROM dept_emp AS de
 LEFT JOIN employees AS emp
@@ -148,7 +148,7 @@ LEFT JOIN titles AS title
 GROUP BY emp.emp_no, de.dept_no, dept.dept_name,title.title,de.from_date,de.to_date
 ORDER BY emp.emp_no, de.dept_no, title.title;
 
-select * 
-into marketing_listing_ordered
-from marketing_distinct_listing
-order by dept_no, title, from_date;
+SELECT * 
+INTO marketing_listing_ordered
+FROM marketing_distinct_listing
+ORDER BY title, from_date;
