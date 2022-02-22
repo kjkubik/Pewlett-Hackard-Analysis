@@ -1,5 +1,5 @@
 # Pewlett-Hackard-Analysis
-Databases and SQL
+Using Databases and SQL to help management find the employees needed to come up with a win-win opportunity 
 
 ##  Solving the Silver Tsunami 
 
